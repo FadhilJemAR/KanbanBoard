@@ -1,5 +1,5 @@
 import Task from "./Task"
-export default function Stage({stage,draggedItem,setDraggedItem,updateStages}){
+export default function Stage({stage,draggedItem,setDraggedItem,updateStages,handleDeleteTask}){
      
     const handleDragStart = (taskId) =>{
         const newDrag =  {
@@ -31,7 +31,7 @@ export default function Stage({stage,draggedItem,setDraggedItem,updateStages}){
               }}
             >
                {stage.tasks.map((task,index)=>{
-                return <Task task={task} key={index} handleDragStart={handleDragStart} handleDragEnd={handleDragEnd} bgColor={stage.color.tc}/>
+                return <Task task={task} key={index} handleDragStart={handleDragStart} handleDragEnd={handleDragEnd} bgColor={stage.color.tc} stageName={stage.name} handleDeleteTask={handleDeleteTask}/>
                })}
             </div>
         </section>

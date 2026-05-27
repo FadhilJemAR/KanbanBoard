@@ -1,5 +1,18 @@
-export default function Task({task,handleDragStart,handleDragEnd,bgColor}){
-    
+import { useEffect } from "react"
+
+export default function Task({task,handleDragStart,handleDragEnd,bgColor,stageName,handleDeleteTask}){
+    useEffect(()=>{
+        if(stageName == 'Done' && task.deleteAfterDone){  
+           const timeOut =  setTimeout(()=>{
+                handleDeleteTask(stageName,task.id);
+            },5000);
+           return ()=>{
+            clearTimeout(timeOut)
+           }
+        }
+    },[])
+
+
     return(
         <div className={` ${bgColor} w-full  px-5 py-3 rounded-md `}
            draggable

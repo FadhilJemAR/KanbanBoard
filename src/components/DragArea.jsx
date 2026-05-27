@@ -3,7 +3,7 @@ import { useState } from "react"
 
 
 
-export default function DragArea({stages,setStages}){
+export default function DragArea({stages,setStages,handleDeleteTask}){
     const [draggedItem,setDraggedItem] = useState(null);
     
     const updateStages = (from,taskId,dest)=>{
@@ -35,9 +35,9 @@ export default function DragArea({stages,setStages}){
     
 
     return(
-        <main className="flex w-full mt-8 justify-between gap-7 grow">
+        <main className="flex w-full mt-5 justify-between gap-7 grow">
             {stages.map((stage,index)=>{
-              return <Stage stage={stage} key={index} draggedItem={draggedItem} setDraggedItem={setDraggedItem} updateStages={updateStages}/>
+              return <Stage stage={stage} key={index} draggedItem={draggedItem} setDraggedItem={setDraggedItem} updateStages={updateStages} handleDeleteTask={handleDeleteTask}/>
             })}
         </main>
     )
