@@ -10,13 +10,23 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType:'autoUpdate',
-      includeAssets:['favicon.svg','icons.svg'],
       manifest:{
         name:'Kanban Board',
-        short_name:"KanbanB",
+        short_name:"KanBoard",
         description:"Catat aktivitas atau tugas yang ingin kamu lakukan",
         theme_color:"#ffffff",
-        
+        icons:[
+          {
+            src:"/images/512.png",
+            sizes:"512x512",
+            type:"image/png"
+          },
+           {
+            src:"/images/192.png",
+            sizes:"192x192",
+            type:"image/png"
+          }
+        ]
       }
     })
   ],
