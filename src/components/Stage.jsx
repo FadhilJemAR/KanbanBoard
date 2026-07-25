@@ -22,7 +22,7 @@ export default function Stage({stage,draggedItem,setDraggedItem,updateStages,han
     }
 
     return(
-        <section className=" shadow-md bg-white w-1/3 rounded-xl overflow-clip flex flex-col">
+        <section className=" shadow-md bg-white w-full md:w-1/3 rounded-xl overflow-clip flex flex-col min-h-70 hover:cursor-grab">
             <h2 className={`text-center text-xl ${stage.color.fg} text-black font-semibold py-2`}>{stage.name}</h2>
             <div className="flex flex-col p-5 grow gap-2" 
               onDragOver={(e)=>{e.preventDefault()}}

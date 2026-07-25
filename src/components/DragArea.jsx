@@ -32,10 +32,8 @@ export default function DragArea({stages,setStages,handleDeleteTask}){
          setStages(newStages);
     }
 
-    
-
     return(
-        <main className="flex w-full mt-5 justify-between gap-7 grow">
+        <main className="flex flex-col md:flex-row w-full mt-5 md:justify-between gap-7 md:items-start py-5">
             {stages.map((stage,index)=>{
               return <Stage stage={stage} key={index} draggedItem={draggedItem} setDraggedItem={setDraggedItem} updateStages={updateStages} handleDeleteTask={handleDeleteTask}/>
             })}

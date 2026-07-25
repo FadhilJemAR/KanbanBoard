@@ -23,7 +23,10 @@ export default function Task({task,handleDragStart,handleDragEnd,bgColor,stageNa
             ()=>{handleDragEnd()}
            }
         >
+         <div className="flex flex-col gap-2">
            <p className="font-semibold">{task.name}</p>
+           {task.priority && (<span className="text-sm">Priority</span>)}
+         </div>
         </div>
     )
 }
