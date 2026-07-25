@@ -1,12 +1,16 @@
 import DragArea from "./components/DragArea"
 import { initialStages } from "./data/stages";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 export default function App(){
   const [stages,setStages] = useState(initialStages);
   const [input,setInput] = useState('');
   const [deleteAfterDone,setDeleteAfterDone] = useState(false);
   const [priority,setPriority] = useState(false);
 
+  useEffect(()=>{
+    //Save to localstorage every stages change
+     localStorage.setItem('stages',JSON.stringify(stages));
+  },[stages])
 
   const handleInput = (e)=>{
     setInput(e.target.value);
@@ -29,9 +33,6 @@ export default function App(){
       newStages[0] = newTodo;
       
       setStages(newStages);
-
-      //Save to localstorage
-      localStorage.setItem('stages',JSON.stringify(newStages));
 
       setInput('');
   }
