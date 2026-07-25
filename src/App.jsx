@@ -1,4 +1,4 @@
-import DragArea from "./components/DragArea"
+import DragArea from "./components/DragArea";
 import { initialStages } from "./data/stages";
 import { useState,useEffect } from "react";
 export default function App(){

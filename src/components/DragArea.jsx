@@ -1,7 +1,6 @@
-import Stage from "./Stage"
-import { useState } from "react"
-
-
+import Stage from "./Stage";
+import DeleteZone from "./DeleteZone";
+import { useState } from "react";
 
 export default function DragArea({stages,setStages,handleDeleteTask}){
     const [draggedItem,setDraggedItem] = useState(null);
@@ -34,6 +33,7 @@ export default function DragArea({stages,setStages,handleDeleteTask}){
 
     return(
         <main className="flex flex-col md:flex-row w-full mt-5 md:justify-between gap-7 md:items-start py-5">
+            {draggedItem && (<DeleteZone handleDeleteTask={handleDeleteTask} draggedItem={draggedItem} setDraggedItem={setDraggedItem} />)}
             {stages.map((stage,index)=>{
               return <Stage stage={stage} key={index} draggedItem={draggedItem} setDraggedItem={setDraggedItem} updateStages={updateStages} handleDeleteTask={handleDeleteTask}/>
             })}

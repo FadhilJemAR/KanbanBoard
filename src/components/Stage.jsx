@@ -14,7 +14,8 @@ export default function Stage({stage,draggedItem,setDraggedItem,updateStages,han
 
     const handleDrop = ()=>{
       if(draggedItem.from === stage.name)return;
-      updateStages(draggedItem.from,draggedItem.taskId,stage.name)
+      updateStages(draggedItem.from,draggedItem.taskId,stage.name);
+      setDraggedItem(null);
     }
     const filteredTasks = stage.tasks.sort((task1,task2)=>{return task2.priority - task1.priority})
 
