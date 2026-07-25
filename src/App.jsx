@@ -2,11 +2,11 @@ import DragArea from "./components/DragArea"
 import { initialStages } from "./data/stages";
 import { useState } from "react";
 export default function App(){
- 
   const [stages,setStages] = useState(initialStages);
   const [input,setInput] = useState('');
   const [deleteAfterDone,setDeleteAfterDone] = useState(false);
   const [priority,setPriority] = useState(false);
+
 
   const handleInput = (e)=>{
     setInput(e.target.value);
@@ -27,8 +27,12 @@ export default function App(){
         tasks:[...newStages[0].tasks,newTask]
       }
       newStages[0] = newTodo;
-
+      
       setStages(newStages);
+
+      //Save to localstorage
+      localStorage.setItem('stages',JSON.stringify(newStages));
+
       setInput('');
   }
 

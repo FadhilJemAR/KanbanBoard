@@ -1,4 +1,4 @@
-export const initialStages = [
+export const initialStages = JSON.parse(localStorage.getItem('stages')) || [
     {
         name:'To Do',
         color:{
