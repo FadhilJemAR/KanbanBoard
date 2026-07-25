@@ -31,3 +31,13 @@ Kanban Board is a visual task management application designed to help you manage
 - Work that has been verified and approved
 - Measurable achievements and results
 - Project success history
+
+## The Feature
+
+### Delete task after done (5s)
+
+When a task reaches the Done stage, it will automatically be removed from the board after 5 seconds. This helps keep your completed tasks from cluttering the interface, while still giving you a brief moment to review the completion before it disappears.
+
+### Priority
+
+Tasks can be marked as priority items to indicate their importance. Priority tasks will always appear at the top of their respective stage lists, ensuring that critical work is immediately visible and accessible. This helps maintain focus on the most important items that require attention.
